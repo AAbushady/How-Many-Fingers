@@ -15,6 +15,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // This will look for a tap within the View Controller. If it finds a tap it will use the dimissKeyBoard function.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector(("dismissKeyBoard")))
+        view.addGestureRecognizer(tap)
+    }
+    
+    // Add Objective-C function that dismisses the software keyboard.
+    @objc func dismissKeyBoard() {
+        view.endEditing(true)
     }
 
     @IBAction func guessTapped(_ sender: Any) {
@@ -28,5 +37,7 @@ class ViewController: UIViewController {
                 resultLabel.text = "I'm Sorry. Try Again!"
             }
         }
+        // This will close the keyboard after the button is pressed.
+        self.view.endEditing(true)
     }
 }
