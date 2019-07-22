@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             } else if Int(guessTextField.text!)! > 5 {
                 resultLabel.text = "I don't have more than 5 fingers..."
             } else {
-                resultLabel.text = "I'm Sorry. Try Again!"
+                resultLabel.text = "I'm Sorry it was \(fingers). Try Again!"
             }
         }
         // This will close the keyboard after the button is pressed.
