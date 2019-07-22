@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var guessTextField: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func guessTapped(_ sender: Any) {
+        let fingers = arc4random_uniform(6)
+        if guessTextField.text != "" {
+            if String(fingers) == guessTextField.text {
+                resultLabel.text = "Correct! You Got It!"
+            } else {
+                resultLabel.text = "I'm Sorry. Try Again!"
+            }
+        }
+    }
 }
-
