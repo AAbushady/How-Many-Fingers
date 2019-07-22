@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         if guessTextField.text != "" {
             if String(fingers) == guessTextField.text {
                 resultLabel.text = "Correct! You Got It!"
+            } else if Int(guessTextField.text!)! > 5 {
+                resultLabel.text = "I don't have more than 5 fingers..."
             } else {
                 resultLabel.text = "I'm Sorry. Try Again!"
             }
